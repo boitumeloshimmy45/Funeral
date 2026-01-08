@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meynet Funerals</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #111;
+    background-color: #d4af37;
+  }
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex; /* EDIT */
+    justify-content: space-between; /* EDIT */
+    align-items: center; /* EDIT */
+  }
+  header img { /* EDIT */
+    height: 50px;
+  }
+  
+  
+  /* NAVIGATION STYLE */
+nav { /* ADDED */
+  display: flex; /* ADDED */
+  gap: 15px; /* ADDED */
+}
+nav a {
+  display: block; /* CHANGED (was inline-block, now block buttons) */
+  background: #fff; /* ADDED */
+  color: #000;
+  padding: 10px 18px; /* ADDED (for button feel) */
+  border-radius: 6px; /* ADDED */
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s; /* CHANGED (was only color, now full transition) */
+}
+nav a:hover {
+  background: #d4af37; /* CHANGED (hover bg gold instead of text color only) */
+  color: #fff; /* ADDED */
+}
+nav a:active { /* ADDED */
+  background: #b38f28; /* darker gold when clicked */
+  color: #fff;
+}
+  
+  }
+  .hero {
+    display: flex; /* EDIT */
+    flex-wrap: wrap; /* EDIT */
+    align-items: center; /* EDIT */
+    justify-content: center; /* EDIT */
+    gap: 20px; /* EDIT */
+    background-color: #000; /* fallback bg */
+    color: #fff;
+    padding: 100px 20px;
+    text-align: left;
+  }
+  .hero-content { /* EDIT */
+    flex: 1 1 400px;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  .btn {
+    display: inline-block;
+    background: #fff; /* gold */
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s; /* CHANGED (was background only, now full transition) */
+  }
+  .btn:hover {
+    background: #b38f28;
+    color: #fff;
+    
+    }
+.btn:active { /* ADDED */
+  background: #b38f28; /* black when pressed */
+  color: #fff;
+}
+    
+    
+  }
+  .hero-video {
+  width: 100%;        /* take full width */
+  max-width: none;    /* remove 500px cap */
+  flex: none;         /* prevent flex shrink/grow */
+}
+
+.hero-video video {
+  width: 100vw;       /* 100% of viewport width */
+  height: auto;
+  border-radius: 0;   /* optional: remove rounded corners for full bleed */
+  display: block;     /* remove default inline spacing */
+}
+
+  section {
+    padding: 70px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+    font-weight: 700;
+  }
+  .services, .testimonials, .gallery { /* EDIT */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .service, .testimonial, .gallery-item { /* EDIT */
+    flex: 1 1 300px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .gallery-item img { /* EDIT */
+    width: 100%;
+    border-radius: 8px;
+  }
+  .service h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+  }
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  form button {
+    background: #fff;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s; /* CHANGED (was no transition, now added smooth effect) */
+  }
+  form button:hover {
+    background: #b38f28;
+    color: #fff;
+  }
+  
+  form button:active { /* ADDED */
+  background: #000;
+  color: #fff;
+  }
+  
+  .social-footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 50px;
+  }
+  .social-icons a {
+    color: #fff;
+    font-size: 36px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .social-icons a:hover {
+    color: #d4af37; /* Matches your brand's gold color */
+  }
+  
+  .full-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .footer-section h4 {
+    color: #d4af37;
+    margin-bottom: 20px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+    line-height: 1.6;
+  }
+
+  .footer-section a:hover {
+    color: #d4af37;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #d4af37;
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  /* Add this CSS to your <style> block for proper map display */
+  .map-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .map-container iframe {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <!-- EDIT: Added space for logo -->
+  <img src="images/logo.png" alt="Meynet Funerals Logo"> 
+  <h1>Meynet Funerals</h1>
+  
+  
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a> <!-- EDIT -->
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content"><!-- EDIT -->
+    <h2>Peace of Mind When You Need It Most</h2>
+    <p>Trusted funeral cover for you and your family</p>
+    <a href="#contact" class="btn">Get Covered Today</a>
+  </div>
+  <div class="hero-video"><!-- EDIT -->
+    <!-- Replace sample.mp4 with your actual video file -->
+    <img src="./Meynet/video.gif" alt="gif">
+    </video>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Funeral Cover Plans</h2>
+  <div class="services">
+    <div class="service">
+      <a href="intuthuzelo-details.html">
+      <h3>Basic Cover</h3>
+      </a>
+      <p>Affordable protection for immediate family members.</p>
+    </div>
+    <div class="service">
+      <a href="my-details.html">
+      <h3>Standard Cover</h3>
+        </a>
+      <p>Extended protection with faster payout options.</p>
+    </div>
+    <div class="service">
+      <a href="net-details.html">
+      <h3>Premium Cover</h3>
+        </a>
+      <p>Full family coverage with added support services.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Meynet Funerals</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    At Meynet Funerals, we are committed to providing respectful, professional, and dignified funeral cover services.  
+    With quick payouts, reliable service, and a caring team, we ensure your loved ones are honored without financial stress.
+  </p>
+</section>
+
+<!-- EDIT: New gallery section for pictures -->
+<section id="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="./Meynet/picture1.jpg" alt="Funeral Service 1">
+    </div>
+    <div class="gallery-item">
+      <img src="./Meynet/picture2.jpg" alt="Funeral Service 2">
+    </div>
+    <div class="gallery-item">
+      <img src="./Meynet/picture3.jpg" alt="Funeral Service 3">
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>"Meynet Funerals made everything simple during a difficult time. I will always be grateful."</p>
+      <strong>- Client A</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Professional, reliable, and caring. My family felt fully supported from start to finish."</p>
+      <strong>- Client B</strong>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="text-align:center;">📞 Call or WhatsApp: +27 74 845 1875 | ✉️ meynetfunerals@gmail.com</p>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Meynet Funerals. All rights reserved.</p>
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.508537000579!2d27.99427007505869!3d-26.25700817703357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508fe51c09893%3A0x6a053f3e18a00445!2sMain%20St%2C%20Johannesburg%20CBD%2C%20Johannesburg%2C%202001!5e0!3m2!1sen!2sza!4v1715617300449!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</footer>
+</body>
+
+<footer class="full-footer">
+  <div class="footer-section">
+    <h4>Contact Us</h4>
+    <p> 27/167 B Koma Road, Phiri, Soweto </p>
+    <p>Phone: +27 74 845 1875</p>
+    <p>Email: meynetfunerals@gmail.com</p>
+  </div>
+
+  <div class="footer-section">
+    <h4>Quick Links</h4>
+    <a href="Modifying Meynet.html">Home</a>
+    <a href="Modifying Meynet.html#services">Our Plans</a>
+    <a href="Modifying Meynet.html#about">About Us</a>
+    <a href="Modifying Meynet.html#contact">Contact</a>
+  </div>
+
+  <div class="footer-section">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61575315506459" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.tiktok.com/@meynetfuneralservices?_t=ZS-8zmnwTFLGo3&_r=1" target="_blank" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    &copy; 2025 Meynet Funeral Services. All rights reserved.
+  </div>
+</footer>
+</html>
